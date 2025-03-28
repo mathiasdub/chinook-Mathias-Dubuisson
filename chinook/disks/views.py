@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
-# Create your views here.
+from .models import Album
+
+
+def index(request):
+    albums = Album.objects.all()
+    return render(request, 'disks/index.html', {'albums': albums})
