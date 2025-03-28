@@ -14,7 +14,7 @@ class Album(models.Model):
 
 class Track(models.Model):
     name = models.CharField(max_length=200)
-    composer = models.CharField(max_length=200)
+    composer = models.CharField(null=True, max_length=200)
     milliseconds = models.IntegerField()
     bytes = models.IntegerField()
     unitPrice = models.FloatField()
