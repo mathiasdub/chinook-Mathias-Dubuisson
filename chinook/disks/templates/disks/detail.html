@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ album.title }}</title>
+</head>
+<body>
+    <h1>{{ album.title }} par {{ album.artist }} :</h1>
+
+    <h2>Liste des titres :</h2>
+
+    <ul>
+        {% for track in album.tracks.all %}
+            <li>
+                {{ track.name }} par {{ track.composer }} 
+                (Durée: {{track.milliseconds}} ms, Prix: {{ track.unitPrice }}€)
+            </li>        
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'disks:index' %}">Retour à la liste des albums</a>
+
+</body>
+</html>
