@@ -24,7 +24,7 @@ class Track(models.Model):
     milliseconds = models.IntegerField()
     bytes = models.IntegerField()
     unitPrice = models.FloatField()
-    album = models.ForeignKey(Album, on_delete=models.CASCADE)
+    album = models.ForeignKey(Album, on_delete=models.CASCADE, related_name="tracks")
     
     def __str__(self):
         return self.name

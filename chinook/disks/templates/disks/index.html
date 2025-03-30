@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des Albums</title>
+</head>
+<body>
+    <h1>Liste des Albums disponibles : </h1>
+    <ul>
+        {% for album in albums %}
+            <li>
+                <a href="{% url 'disks:detail' album.id %}"> {{album.title}} </a> 
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
