@@ -4,8 +4,12 @@ from .models import Album
 
     
 def index(request):
-    albums = Album.objects.all()
-    return render(request, 'disks/index.html', {'albums': albums})
+    query = request.GET.get('recherche', '')
+    if query:
+        albums = Album.objects.filter(title__icontains=query)
+    else:
+        albums = Album.objects.all()
+    return render(request, 'disks/index.html', {'albums': albums, 'query': query})
 
 
 def detail(request, album_id):

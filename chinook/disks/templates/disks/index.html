@@ -4,6 +4,13 @@
     <title>Liste des Albums</title>
 </head>
 <body>
+
+    <h1>Recherche d'un Album : </h1>
+    <form method="get" action="">
+        <input type="text" name="recherche" placeholder="Rechercher un album..." value="{{ query }}">
+        <button type="submit">Rechercher</button>
+    </form>
+    
     <h1>Liste des Albums disponibles : </h1>
     <ul>
         {% for album in albums %}
